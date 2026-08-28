@@ -89,7 +89,7 @@ async function main() {
 
   app.innerHTML = `
     <canvas id="viewport" aria-label="The Wobbler viewport"></canvas>
-    <a class="back" href="/">All demos</a>
+    <a class="back" href="${import.meta.env.BASE_URL}">All demos</a>
     <aside class="hud">
       <h1>The Wobbler</h1>
       <p>Alien ringworld propulsion at ~1 AU — drag to orbit · scroll to zoom · right-drag to pan</p>

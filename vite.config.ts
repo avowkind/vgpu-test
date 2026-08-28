@@ -5,6 +5,8 @@ import { defineConfig } from "vite";
 import { wgslVitePlugin } from "@vgpu/wgsl/loader-vite";
 
 const root = fileURLToPath(new URL(".", import.meta.url));
+/** Project Pages URL is https://<user>.github.io/vgpu-test/ */
+const pagesBase = process.env.GITHUB_ACTIONS ? "/vgpu-test/" : "/";
 
 function demoInputs() {
   const demosRoot = resolve(root, "demos");
@@ -21,6 +23,7 @@ function demoInputs() {
 }
 
 export default defineConfig({
+  base: pagesBase,
   plugins: [wgslVitePlugin()],
   appType: "mpa",
   build: {

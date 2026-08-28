@@ -81,7 +81,7 @@ async function main() {
 
   app.innerHTML = `
     <canvas id="viewport" aria-label="Dodecahedron viewport"></canvas>
-    <a class="back" href="/">All demos</a>
+    <a class="back" href="${import.meta.env.BASE_URL}">All demos</a>
     <aside class="hud">
       <h1>Dodecahedron</h1>
       <p>Drag to rotate · scroll to zoom · right-drag to pan</p>

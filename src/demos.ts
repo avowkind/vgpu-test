@@ -21,4 +21,10 @@ export const demos: readonly Demo[] = [
     description: "Alien ringworld propulsion at ~1 AU from a Sol-type sun.",
     href: `${base}demos/the-wobbler/`,
   },
+  {
+    id: "hour-glass",
+    title: "Hourglass",
+    description: "Sand draining through uneven glass onto a wooden chessboard.",
+    href: `${base}demos/hour-glass/`,
+  },
 ];

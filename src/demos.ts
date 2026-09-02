@@ -27,4 +27,16 @@ export const demos: readonly Demo[] = [
     description: "Sand draining through uneven glass onto a wooden chessboard.",
     href: `${base}demos/hour-glass/`,
   },
+  {
+    id: "sundial",
+    title: "Sundial",
+    description: "A garden dial whose shadow keeps apparent solar time.",
+    href: `${base}demos/sundial/`,
+  },
+  {
+    id: "murmuration",
+    title: "Murmuration",
+    description: "GPU boids that compact when the flock is scattered.",
+    href: `${base}demos/murmuration/`,
+  },
 ];

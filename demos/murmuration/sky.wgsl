@@ -26,19 +26,19 @@ struct VertexOut {
 
 fn skyColor(dir: vec3f) -> vec3f {
   let up = clamp(dir.y * 0.5 + 0.5, 0.0, 1.0);
-  let zenith = vec3f(0.08, 0.07, 0.16);
-  let mid = vec3f(0.28, 0.14, 0.22);
-  let horizon = vec3f(0.95, 0.42, 0.18);
+  let zenith = vec3f(0.22, 0.48, 0.98);
+  let mid = vec3f(0.40, 0.66, 1.05);
+  let horizon = vec3f(0.68, 0.84, 1.05);
   var color = mix(horizon, mid, pow(up, 0.55));
-  color = mix(color, zenith, pow(up, 1.6));
-  let sunDir = normalize(vec3f(-0.35, 0.12, 0.55));
+  color = mix(color, zenith, pow(up, 1.45));
+  let sunDir = normalize(vec3f(-0.32, 0.48, 0.52));
   let mu = max(dot(dir, sunDir), 0.0);
-  let glow = pow(mu, 18.0) * 0.55;
+  let glow = pow(mu, 22.0) * 0.38;
   let disc = smoothstep(0.9994, 0.99985, mu);
-  color += vec3f(1.2, 0.55, 0.2) * glow;
-  color += vec3f(1.6, 1.1, 0.55) * disc * 8.0;
+  color += vec3f(1.05, 0.95, 0.72) * glow;
+  color += vec3f(1.5, 1.38, 1.15) * disc * 7.0;
   let ground = smoothstep(0.06, -0.18, dir.y);
-  color = mix(color, vec3f(0.05, 0.05, 0.04), ground * 0.92);
+  color = mix(color, vec3f(0.08, 0.12, 0.1), ground * 0.92);
   return color;
 }
 

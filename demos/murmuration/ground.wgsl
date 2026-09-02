@@ -36,7 +36,7 @@ struct VertexOut {
   let albedo = mix(marsh, vec3f(0.16, 0.12, 0.07), patchNoise * 0.35);
   let wrap = max(dot(n, light), 0.18);
   let fog = smoothstep(18.0, 40.0, length(worldPos.xz));
-  let dusk = vec3f(0.22, 0.14, 0.12);
-  let color = mix(albedo * wrap * 1.6, dusk, fog);
+  let haze = vec3f(0.28, 0.45, 0.68);
+  let color = mix(albedo * wrap * 1.6, haze, fog);
   return vec4f(color, 1.0);
 }
